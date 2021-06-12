@@ -1,4 +1,4 @@
-import styles from '../styles/Home.module.css'
+import styles from './Links.module.css'
 
 export function Links() {
     return (
@@ -30,7 +30,7 @@ export function Links() {
                 <h2>Deploy &rarr;</h2>
                 <p>
                     Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+                </p>
             </a>
         </div>
     )
