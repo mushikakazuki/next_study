@@ -11,6 +11,7 @@ export default function Home() {
   const [foo, setfoo] = useState(1);
   const [moji, setmoji] = useState("");
   const [flg, setflg] = useState(true);
+  const [array, setarray] = useState([]);
   const handleClick = useCallback(() => {
     if (foo < 10) {
       setfoo((foo) => foo + 1);
@@ -29,6 +30,17 @@ export default function Home() {
     setflg((flg) => !flg);
   }, []);
 
+  const handleAdd = useCallback(() => {
+    setarray((array) => {
+      if (array.some((item) => item === moji)) {
+        alert("NG");
+        return array;
+      }
+      const newarray = [...array, moji];
+      return newarray;
+    });
+  }, [moji]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -45,6 +57,12 @@ export default function Home() {
           setmoji(e.target.value);
         }}
       ></input>
+      <button onClick={handleAdd}>追加</button>
+      <ul>
+        {array.map((item) => {
+          return <li key={item}>{item}</li>;
+        })}
+      </ul>
       <Main page="index" />
       <Footer />
     </div>
