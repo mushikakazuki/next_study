@@ -3,11 +3,11 @@ import Head from "next/head";
 
 import { useCounter } from "src/hooks/useCounter";
 import { useArray } from "src/hooks/useArray";
-import { leghtblue } from "src/hooks/leghtblue";
+import { useBgColor } from "src/hooks/useleghtblue";
 function MyApp({ Component, pageProps }) {
   const counter = useCounter();
   const array = useArray();
-  leghtblue();
+  useBgColor();
 
   return (
     <>
