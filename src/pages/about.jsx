@@ -6,13 +6,8 @@ import { Footer } from "src/components/Footer";
 import { Main } from "src/components/Main";
 import { Header } from "src/components/Header";
 
-import { useCounter } from "src/hooks/useCounter";
-import { useArray } from "src/hooks/useArray";
-import { leghtblue } from "src/hooks/leghtblue";
-
 export default function About(props) {
   const {
-    foo,
     flg,
     handleClick,
     flgchange,
@@ -20,8 +15,8 @@ export default function About(props) {
     array,
     handleAdd,
     handleChnge,
+    doublecount,
   } = props;
-  leghtblue();
 
   return (
     <div className={styles.container}>
@@ -29,7 +24,7 @@ export default function About(props) {
         <title>Create Next App</title>
       </Head>
       <Header />
-      {flg ? <h1>{foo}</h1> : null}
+      {flg ? <h1>{doublecount}</h1> : null}
       <button onClick={handleClick}>ボタン</button>
       <button onClick={flgchange}>{flg ? "非表示" : "表示"}</button>
       <input type="text" value={moji} onChange={handleChnge}></input>

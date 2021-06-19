@@ -1,8 +1,12 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 export const useCounter = () => {
   const [foo, setfoo] = useState(1);
   const [flg, setflg] = useState(true);
+
+  const doublecount = useMemo(() => {
+    return foo * 2;
+  }, [foo]);
 
   const handleClick = useCallback(() => {
     if (foo < 10) {
@@ -14,5 +18,5 @@ export const useCounter = () => {
     setflg((flg) => !flg);
   }, []);
 
-  return { foo, flg, handleClick, flgchange };
+  return { foo, flg, doublecount, handleClick, flgchange };
 };
