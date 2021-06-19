@@ -5,13 +5,19 @@ import { Footer } from "src/components/Footer";
 import { Main } from "src/components/Main";
 import { Header } from "src/components/Header";
 
-import { useCounter } from "src/hooks/useCounter";
-import { useArray } from "src/hooks/useArray";
 import { leghtblue } from "src/hooks/leghtblue";
 
-export default function Home() {
-  const { foo, flg, handleClick, flgchange } = useCounter();
-  const { moji, array, handleAdd, handleChnge } = useArray();
+export default function Home(props) {
+  const {
+    foo,
+    flg,
+    handleClick,
+    flgchange,
+    moji,
+    array,
+    handleAdd,
+    handleChnge,
+  } = props;
   leghtblue();
 
   return (

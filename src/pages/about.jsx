@@ -10,9 +10,17 @@ import { useCounter } from "src/hooks/useCounter";
 import { useArray } from "src/hooks/useArray";
 import { leghtblue } from "src/hooks/leghtblue";
 
-export default function About() {
-  const { foo, flg, handleClick, flgchange } = useCounter();
-  const { moji, array, handleAdd, handleChnge } = useArray();
+export default function About(props) {
+  const {
+    foo,
+    flg,
+    handleClick,
+    flgchange,
+    moji,
+    array,
+    handleAdd,
+    handleChnge,
+  } = props;
   leghtblue();
 
   return (
